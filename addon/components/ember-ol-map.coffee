@@ -1,8 +1,7 @@
 `import Ember from 'ember'`
-`import layout from '../templates/components/ember-ol-map'`
 
 EmberOlMapComponent = Ember.Component.extend
-  layout: layout
+  classNames: ["ol-map-canvas"]
 
   init: ->
     @_super()
@@ -14,15 +13,13 @@ EmberOlMapComponent = Ember.Component.extend
     @_super()
     return if @get "map"
     @set "map", new ol.Map
-      target: @$().find(".ol-map-canvas").get(0)
+      target: @get "elementId"
       controls: @getControls()
       layers: @getLayers()
       view: new ol.View
         projection: @get "mapProjection"
-        center: [@get("extent")]
-        ol.proj.fromLonLat([14.2475, 53.907778], @get "mapProjection")
         extent: @get "extent"
-        zoom: 1
+    @get("map").getView().fit(@get("extent"), @get("map").getSize())
 
   getControls: -> new ol.Collection [new ol.control.ScaleLine()]
 
@@ -36,8 +33,5 @@ EmberOlMapComponent = Ember.Component.extend
             LAYERS: layer.name
             VERSION: "1.1.1"
     )
-
-
-
 
 `export default EmberOlMapComponent`
