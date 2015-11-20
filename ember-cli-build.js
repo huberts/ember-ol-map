@@ -7,6 +7,9 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  app.import("bower_components/proj4/dist/proj4.js");
+  app.import("vendor/ol.js");
+  app.import("vendor/ol.css");
   /*
     This build file specifes the options for the dummy test app of this
     addon, located in `/tests/dummy`
