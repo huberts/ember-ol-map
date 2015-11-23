@@ -6,6 +6,10 @@ Application = Ember.Controller.extend
     {
       url: "http://hubert.systherm-info.pl/mapserver/swinoujscie-vista"
       name: "obreby"
+    },
+    {
+      url: "http://hubert.systherm-info.pl/mapserver/swinoujscie-vista"
+      name: "dzialki"
     }
   ]
 
