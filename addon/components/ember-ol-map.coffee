@@ -3,11 +3,8 @@
 EmberOlMapComponent = Ember.Component.extend
   classNames: ["ol-map-canvas"]
 
-  init: ->
-    @_super()
-    @mapProjection = new ol.proj.Projection
-      code: @get "projectionCode"
-      extent: @get "extent"
+  zoomLevelObserver: Ember.observer "zoomLevel", ->
+    Ember.run.next => @get("map").getView().setZoom @get("zoomLevel")
 
   didInsertElement: ->
     @_super()
@@ -17,9 +14,19 @@ EmberOlMapComponent = Ember.Component.extend
       controls: @getControls()
       layers: @getLayers()
       view: new ol.View
-        projection: @get "mapProjection"
+        projection: ol.proj.get @get "projectionCode"
         extent: @get "extent"
-    @get("map").getView().fit(@get("extent"), @get("map").getSize())
+
+    @get("map").getView().fit @get("extent"), @get("map").getSize()
+    @get("map").getView().set "minZoom", 9
+    @set "maxZoomLevel", @get("map").getView().getZoom()
+    @set "zoomLevel", @get("maxZoomLevel")
+
+
+    @get("map").getView().on "propertychange", Ember.run.bind(@, (event) ->
+      switch event.key
+        when "resolution" then @set "zoomLevel", @get("map").getView().getZoom()
+    )
 
   getControls: -> new ol.Collection [new ol.control.ScaleLine()]
 
