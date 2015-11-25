@@ -1,6 +1,6 @@
 {
   "name": "ember-ol-map",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "description": "Ember Addon for OpenLayers 3 support.",
   "directories": {
     "doc": "doc",
