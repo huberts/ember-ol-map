@@ -1,7 +1,7 @@
 `import Ember from 'ember'`
-`import layout from '../templates/components/gi-map-navigation'`
+`import layout from './template'`
 
-GiMapNavigationComponent = Ember.Component.extend
+EmberGiMapNavigationComponent = Ember.Component.extend
   layout: layout
   classNames: ["btn-group", "gi-map-toolbar"]
   didInsertElement: ->
@@ -13,5 +13,4 @@ GiMapNavigationComponent = Ember.Component.extend
     zoomOut: -> @get("onZoomChange")("-")
     zoomExtent: -> @get("onZoomChange")("0")
 
-
-`export default GiMapNavigationComponent`
+`export default EmberGiMapNavigationComponent`

@@ -1,5 +1,5 @@
 `import Ember from 'ember'`
-`import layout from '../templates/components/ember-gi-map'`
+`import layout from './template'`
 
 EmberGiMapComponent = Ember.Component.extend
   layout: layout
