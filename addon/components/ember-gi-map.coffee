@@ -10,6 +10,6 @@ EmberGiMapComponent = Ember.Component.extend
       switch zoomFlag
         when "+" then @incrementProperty "zoomLevel"
         when "-" then @decrementProperty "zoomLevel"
-        else @set "zoomLevel", -1
+        else @set "zoomLevel", 0
 
 `export default EmberGiMapComponent`

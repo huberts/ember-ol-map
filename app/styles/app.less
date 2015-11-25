@@ -1,8 +1,5 @@
 @import "/bower_components/bootstrap/less/variables";
 
-.ol-map-canvas {
-}
-
 .ember-gi-map-component {
   position: relative;
 }
@@ -12,4 +9,43 @@
   position: absolute;
   top: 0.5 * @font-size-base;
   left: 0.5 * @font-size-base;
+}
+
+.ol-map-scale {
+  color: black;
+  z-index: 1000;
+  display: inline;
+  position: absolute;
+  background-color: #dddddd;
+  opacity: 0.9;
+  padding-left: 0.5 * @font-size-base;
+  left: 0.5 * @font-size-base;
+  bottom: 0.5 * @font-size-base;
+  width: 9 * @font-size-base;
+}
+
+.ol-map-coordinates-local {
+  color: black;
+  z-index: 1000;
+  display: inline;
+  position: absolute;
+  background-color: #dddddd;
+  opacity: 0.9;
+  padding-left: 0.5 * @font-size-base;
+  left: 10 * @font-size-base;
+  bottom: 0.5 * @font-size-base;
+  width: 15 * @font-size-base;
+}
+
+.ol-map-coordinates-lonlat {
+  color: black;
+  z-index: 1000;
+  display: inline;
+  position: absolute;
+  background-color: #dddddd;
+  opacity: 0.9;
+  padding-left: 0.5 * @font-size-base;
+  left: 25.5 * @font-size-base;
+  bottom: 0.5 * @font-size-base;
+  width: 15 * @font-size-base;
 }
