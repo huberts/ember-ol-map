@@ -4,6 +4,7 @@
 EmberGiMapComponent = Ember.Component.extend
   layout: layout
   classNames: ["panel", "panel-default", "ember-gi-map-component"]
+  zoomLevel: 0
 
   actions:
     zoomChanged: (zoomFlag) ->
