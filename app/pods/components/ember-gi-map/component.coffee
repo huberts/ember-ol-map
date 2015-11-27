@@ -1,1 +1,1 @@
-`export { default } from 'ember-ol-map/components/ember-gi-map'`
+`export { default } from 'ember-ol-map/pods/components/ember-gi-map/component'`
